@@ -1,0 +1,30 @@
+using System;
+
+class program 
+{
+    public static void Main() 
+    {
+        string name = "amma";
+        char[] chars = name.ToCharArray();
+        foreach (char c in chars) 
+        {
+            Console.Write(c+ " ");
+        }
+
+        char[] palindrome = new char[chars.Length]; 
+        for (int i = chars.Length - 1, j = 0; i >= 0; i--, j++) 
+        {
+            palindrome[j] = chars[i];
+            
+            
+        }
+        string reverse = new string(palindrome);
+        Console.WriteLine("reversed num : "+reverse);
+
+        if (name == reverse)
+        {
+            Console.WriteLine("This is an palindrome");
+        }
+        else { Console.WriteLine("Not a Palindrome"); }
+    }
+}
