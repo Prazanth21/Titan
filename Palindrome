@@ -1,30 +1,39 @@
 using System;
 
-class program 
+class Program
 {
-    public static void Main() 
+    public static void Main()
     {
-        string name = "amma";
-        char[] chars = name.ToCharArray();
-        foreach (char c in chars) 
+        string name = "prasanth";   
+
+        char[] chars = name.ToCharArray(); 
+
+        
+        foreach (char c in chars)
         {
-            Console.Write(c+ " ");
+            Console.Write(c + "");
+        }
+        Console.WriteLine(":");
+
+       
+        char[] reversed = new char[name.Length];
+        for (int i = name.Length - 1, j = 0; i >= 0; i--, j++)
+        {
+            reversed[j] = chars[i];
         }
 
-        char[] palindrome = new char[chars.Length]; 
-        for (int i = chars.Length - 1, j = 0; i >= 0; i--, j++) 
-        {
-            palindrome[j] = chars[i];
-            
-            
-        }
-        string reverse = new string(palindrome);
-        Console.WriteLine("reversed num : "+reverse);
+       
+        string palindrome = new string(reversed);
 
-        if (name == reverse)
+       
+        if (palindrome.Trim() == name.Trim())
         {
-            Console.WriteLine("This is an palindrome");
+            Console.WriteLine("The string is a palindrome.");
         }
-        else { Console.WriteLine("Not a Palindrome"); }
+        else
+        {
+            Console.WriteLine("Not a palindrome.");
+        }
     }
 }
+
